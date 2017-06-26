@@ -44,7 +44,7 @@ public class SessionProxyFilter extends OncePerRequestFilter {
 
 			@Override
 			public HttpSession getSession(boolean create) {
-				return proxySession(create, request, response);
+				return proxySession(true, request, response);
 			}
 
 			@Override

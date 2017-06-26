@@ -12,7 +12,7 @@ public interface Persister {
 	 * @param sessionId the session id
 	 * @param name the attribute name
 	 * @return the value or null
-	 * @throws InvalidatedSessionException
+	 * @throws InvalidatedSessionException an error if the session is invalid
 	 */
 	Object getAttribute(String sessionId, String name) throws InvalidatedSessionException;
 
@@ -21,7 +21,7 @@ public interface Persister {
 	 * @param sessionId the session id
 	 * @param name the attribute name
 	 * @param value the value
-	 * @throws InvalidatedSessionException
+	 * @throws InvalidatedSessionException an error if the session is invalid
 	 */
 	void setAttribute(String sessionId, String name, Object value) throws InvalidatedSessionException;
 
@@ -29,7 +29,7 @@ public interface Persister {
 	 * Delete a persistent attribute value.
 	 * @param sessionId the session id
 	 * @param name the attribute name
-	 * @throws InvalidatedSessionException
+	 * @throws InvalidatedSessionException an error if the session is invalid
 	 */
 	void removeAttribute(String sessionId, String name) throws InvalidatedSessionException;
 
@@ -37,7 +37,7 @@ public interface Persister {
 	 * Get all attribute names for the session.
 	 * @param sessionId the session id
 	 * @return the names (never null, may be empty)
-	 * @throws InvalidatedSessionException
+	 * @throws InvalidatedSessionException an error if the session is invalid
 	 */
 	List<String> getAttributeNames(String sessionId) throws InvalidatedSessionException;
 
@@ -57,7 +57,7 @@ public interface Persister {
 	 * Get the last access time.
 	 * @param sessionId the session id
 	 * @return the time
-	 * @throws InvalidatedSessionException
+	 * @throws InvalidatedSessionException an error if the session is invalid
 	 */
 	long getLastAccessedTime(String sessionId) throws InvalidatedSessionException;
 
@@ -68,7 +68,7 @@ public interface Persister {
     *
 	 * @param sessionId the session id
 	 * @param interval the interval seconds
-	 * @throws InvalidatedSessionException
+	 * @throws InvalidatedSessionException an error if the session is invalid
 	 */
 	void setMaxInactiveInterval(String sessionId, int interval) throws InvalidatedSessionException;
 
@@ -79,7 +79,7 @@ public interface Persister {
     *
 	 * @param sessionId the session id
 	 * @return the interval seconds
-	 * @throws InvalidatedSessionException
+	 * @throws InvalidatedSessionException an error if the session is invalid
 	 */
 	int getMaxInactiveInterval(String sessionId) throws InvalidatedSessionException;
 

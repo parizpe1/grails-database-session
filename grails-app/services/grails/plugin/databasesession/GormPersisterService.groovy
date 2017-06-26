@@ -1,6 +1,6 @@
 package grails.plugin.databasesession
 
-import grails.gorm.transactions.Transactional
+import grails.transaction.Transactional
 import grails.util.GrailsUtil
 import grails.validation.ValidationException
 import org.grails.web.util.GrailsApplicationAttributes
